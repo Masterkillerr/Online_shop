@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Interactive Shopping Cart - ShopInnovate</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex h-16 items-center justify-between gap-8">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">ShopInnovate</h2>
+</div>
+<!-- Nav Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Products</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Deals</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Orders</a>
+</nav>
+<!-- Search and Icons -->
+<div class="flex flex-1 items-center justify-end gap-4">
+<div class="hidden lg:block w-full max-w-sm">
+<div class="relative">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="material-symbols-outlined text-slate-400 text-sm">search</span>
+</div>
+<input class="block w-full rounded-lg border-0 bg-slate-100 dark:bg-slate-800 py-2 pl-10 pr-3 text-sm focus:ring-2 focus:ring-primary placeholder:text-slate-500" placeholder="Search products..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="relative p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white">3</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+<!-- Breadcrumb & Header -->
+<div class="mb-8">
+<nav class="flex mb-4 text-sm font-medium text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary" href="#">Home</a>
+<span class="mx-2">/</span>
+<span class="text-slate-900 dark:text-white">Shopping Cart</span>
+</nav>
+<div class="flex items-end justify-between border-b border-slate-200 dark:border-slate-800 pb-6">
+<div>
+<h1 class="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">Your Cart</h1>
+<p class="mt-2 text-slate-500 dark:text-slate-400">You have 3 items in your selection.</p>
+</div>
+<button class="flex items-center gap-2 rounded-lg bg-slate-100 dark:bg-slate-800 px-4 py-2 text-sm font-bold text-slate-700 dark:text-slate-300 hover:bg-red-50 hover:text-red-600 transition-all">
+<span class="material-symbols-outlined text-lg">delete_sweep</span>
+                    Empty Cart
+                </button>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-12 lg:grid-cols-12">
+<!-- Product List -->
+<div class="lg:col-span-8 space-y-6">
+<!-- Item 1 -->
+<div class="group relative flex flex-col sm:flex-row items-center gap-6 rounded-xl bg-white dark:bg-background-dark p-6 shadow-sm border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-all">
+<div class="h-32 w-32 shrink-0 overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800">
+<div class="h-full w-full bg-cover bg-center" data-alt="Premium sleek wireless headphones in space gray" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVILycOqilCNpXxSYN32M2S4W3s4qo30PME32Js-qfiO9fvRrxkEBtrFfOItEKN4c1IEX3Li1WTgm0OfOXNyFTmB6l79NFow8a4lJux5mNkVP1Py0HiWDS7GtVmuUxrMWAsnpYXkKdtYfshV-NNodYSQ-tW3IT607gPxWdC4GV4NtHbL4cMVwgzJi_HrRwJ7KvOtRv-Po3T2wqXYfjT3_mnyEBkewV10sr6FqWMJcYLzOxQKO3UxrP9YRk9jj_Qq2ftQfTVhr_vIGo');"></div>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Premium Wireless Headphones</h3>
+<p class="text-sm text-slate-500 mt-1 uppercase tracking-wider font-medium">Electronics • Space Gray</p>
+</div>
+<button class="text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<div class="flex items-center gap-3 rounded-full border border-slate-200 dark:border-slate-700 px-2 py-1">
+<button class="flex h-8 w-8 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined text-lg">remove</span>
+</button>
+<span class="w-6 text-center font-bold">1</span>
+<button class="flex h-8 w-8 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+<p class="text-xl font-black text-primary">$299.00</p>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="group relative flex flex-col sm:flex-row items-center gap-6 rounded-xl bg-white dark:bg-background-dark p-6 shadow-sm border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-all">
+<div class="h-32 w-32 shrink-0 overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800">
+<div class="h-full w-full bg-cover bg-center" data-alt="Mechanical gaming keyboard with vibrant RGB lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuClmfeThDek1XWoJRJKZ1tlB7WIkJfnQxkLZwqkClyFkSFSpCK59YB4eLGl_p-u5fiurxdnKqd57dkZJrzoH3ZIDns80frsz9eXE2kPO0-qxsopcWDwBjTDcD39jJ5iBYKo-9-YVgDBTVKe4BsFFqlDj8aHknhq-tL13aXQ-ZXR7qYThzLICvgH9Y7A7jIfA0TYqct7-emRZ4mDur3YCGBntCQBDb4GiQ9qJrogrE2Uo59Cq6TYKF7Ztkj2Al6M5K-Fuv8J5iX4aCkh');"></div>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Mechanical Gaming Keyboard</h3>
+<p class="text-sm text-slate-500 mt-1 uppercase tracking-wider font-medium">Accessories • RGB Backlit</p>
+</div>
+<button class="text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<div class="flex items-center gap-3 rounded-full border border-slate-200 dark:border-slate-700 px-2 py-1">
+<button class="flex h-8 w-8 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined text-lg">remove</span>
+</button>
+<span class="w-6 text-center font-bold">1</span>
+<button class="flex h-8 w-8 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+<p class="text-xl font-black text-primary">$159.99</p>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="group relative flex flex-col sm:flex-row items-center gap-6 rounded-xl bg-white dark:bg-background-dark p-6 shadow-sm border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-all">
+<div class="h-32 w-32 shrink-0 overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800">
+<div class="h-full w-full bg-cover bg-center" data-alt="Ultra-wide professional curved computer monitor" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBDykbvQCfGkymIycZCsKyBEgmP2MyQh2HFAiATY8caNfy4nrQ4hy3dHn9tjhd62jv-EHE19yOALhL0oE9x9J4Amwx-8e5YG0i3QW-1P7bJLAMPSaeymR6ielJ5760sbhp_eBGEpE1NvDrY1YT2DNU3UTtfka-bwGZdqrKIXwppafzk7KlkUOMhTxj3A36Niom8AVt1P3aWVoR5l98uobkJ-mvSLW2Q7-W03lkhmxWiA_ORQ-4mTKxmmA5Lplj8Ss3-pM2_7isHyglg');"></div>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Ultra-Wide Curve Monitor</h3>
+<p class="text-sm text-slate-500 mt-1 uppercase tracking-wider font-medium">Workstation • 34-inch 4K</p>
+</div>
+<button class="text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<div class="flex items-center gap-3 rounded-full border border-slate-200 dark:border-slate-700 px-2 py-1">
+<button class="flex h-8 w-8 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined text-lg">remove</span>
+</button>
+<span class="w-6 text-center font-bold">1</span>
+<button class="flex h-8 w-8 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+<p class="text-xl font-black text-primary">$899.00</p>
+</div>
+</div>
+</div>
+<div class="flex justify-start">
+<a class="inline-flex items-center gap-2 text-primary font-semibold hover:underline decoration-2 underline-offset-4" href="#">
+<span class="material-symbols-outlined">arrow_back</span>
+                        Continue Shopping
+                    </a>
+</div>
+</div>
+<!-- Summary Card -->
+<div class="lg:col-span-4">
+<div class="sticky top-24 rounded-2xl bg-white dark:bg-background-dark p-8 shadow-lg border border-slate-100 dark:border-slate-800">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Order Summary</h2>
+<div class="space-y-4">
+<div class="flex justify-between text-slate-600 dark:text-slate-400">
+<span>Subtotal</span>
+<span class="font-semibold text-slate-900 dark:text-white">$1,357.99</span>
+</div>
+<div class="flex justify-between text-slate-600 dark:text-slate-400">
+<span>Shipping</span>
+<span class="font-semibold text-green-600 uppercase text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">local_shipping</span>
+                                Free
+                            </span>
+</div>
+<div class="flex justify-between text-slate-600 dark:text-slate-400">
+<span>Estimated Tax</span>
+<span class="font-semibold text-slate-900 dark:text-white">$108.64</span>
+</div>
+<div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+<div class="flex justify-between items-center mb-6">
+<span class="text-lg font-bold">Total</span>
+<span class="text-3xl font-black text-primary">$1,466.63</span>
+</div>
+</div>
+<!-- Promo Code -->
+<div class="relative mb-6">
+<input class="w-full rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 py-3 pl-4 pr-24 text-sm focus:ring-2 focus:ring-primary" placeholder="Promo code" type="text"/>
+<button class="absolute right-2 top-2 rounded-md bg-slate-900 dark:bg-primary px-4 py-1.5 text-xs font-bold text-white transition-opacity hover:opacity-90">Apply</button>
+</div>
+<button class="w-full rounded-xl bg-primary py-4 px-6 text-center text-base font-bold text-white shadow-xl shadow-primary/20 hover:bg-primary/90 transition-all flex items-center justify-center gap-2 group">
+                            Checkout Now
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<div class="mt-6 flex flex-col gap-4">
+<div class="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-sm">shield</span>
+                                Secure checkout with SSL encryption
+                            </div>
+<div class="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-sm">cached</span>
+                                30-day money-back guarantee
+                            </div>
+</div>
+<!-- Payment Icons -->
+<div class="mt-8 flex justify-center gap-4 grayscale opacity-50 dark:invert">
+<div class="h-8 w-12 bg-slate-200 dark:bg-slate-700 rounded flex items-center justify-center font-bold italic text-[10px]">VISA</div>
+<div class="h-8 w-12 bg-slate-200 dark:bg-slate-700 rounded flex items-center justify-center font-bold italic text-[10px]">MC</div>
+<div class="h-8 w-12 bg-slate-200 dark:bg-slate-700 rounded flex items-center justify-center font-bold italic text-[10px]">Paypal</div>
+<div class="h-8 w-12 bg-slate-200 dark:bg-slate-700 rounded flex items-center justify-center font-bold italic text-[10px]">Apple</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-20 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<div class="flex items-center justify-center gap-3 mb-6">
+<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-sm">rocket_launch</span>
+</div>
+<h2 class="text-lg font-bold tracking-tight text-slate-900 dark:text-white">ShopInnovate</h2>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm">© 2024 ShopInnovate Inc. All rights reserved. Innovative solutions for modern shopping.</p>
+</div>
+</footer>
+</body></html>

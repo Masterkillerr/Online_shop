@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Innovative Shop - Modern E-commerce</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass {
+            background: rgba(16, 22, 34, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .animated-gradient-bg {
+            background: linear-gradient(-45deg, #f6f6f8, #eef2ff, #e0e7ff, #f6f6f8);
+            background-size: 400% 400%;
+        }
+        .dark .animated-gradient-bg {
+            background: linear-gradient(-45deg, #101622, #1e293b, #0f172a, #101622);
+            background-size: 400% 400%;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen animated-gradient-bg">
+<header class="sticky top-0 z-50 glass border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Innovative Shop</h1>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">Shop</a>
+<a class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">New Arrivals</a>
+<a class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">Deals</a>
+</nav>
+</div>
+<div class="flex items-center gap-4 flex-1 justify-end max-w-md ml-8">
+<div class="relative w-full hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary outline-none" placeholder="Search products..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">person</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden ml-2 border border-slate-300 dark:border-slate-600">
+<img class="w-full h-full object-cover" data-alt="User profile avatar male" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKZrKkIFzexdKiTIqrisQc7E4307eRHIoSfbTHOJ8e9Dx8bi8DqP6QYmgFAFAJGe6_0dbuZzAR3MZyu-Q4rZKk1hGnUyPNSvqBBMf9YFSO0YvvbXQPbIcPIiZ-dPbtu9NBiWunCQH_QJljYPVNLHj0YbOUHAeJoAuUVLuz3pYXQNvqCKK1wjMfKn7mcAqGsnIPqHBFwuVQazGUkhrGw8PLLA93xcsa43M10KQ_zMeNgbZ5lXDZevgj40lT_mCcQY5F1tiVeGZGYGVZ"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<section class="mb-12">
+<div class="relative overflow-hidden rounded-xl h-[450px] flex items-center bg-slate-900" data-alt="Futuristic electronic gadgets display on desk" style="background-image: linear-gradient(to right, rgba(0,0,0,0.8), transparent), url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1WYJNIoGBwzh_Xcdq9DTrtr4PG5ys4VLOrvYbLBrghLna81m0eAeqTGbMrvT6yheJZjZcUcrv43HnZewsmvITh4deLnbVjnWUImR6Vb-ZpFlyciy_iGWpbbCFvh3pxHOYd43amgDXjGV5neEsu4UfbK88_UeqMKoA3pqmlnoiB74REPhSmtYhJGsSfTX1bNiABsbfKPBjcApdic0-RK9B0YAaiizOPYdFiB0KERfUZ-l7FfOodGpiqrWKoPpPOvh_LVf7bfW4rB5t'); background-size: cover; background-position: center;">
+<div class="relative z-10 px-8 md:px-16 max-w-2xl">
+<span class="inline-block px-3 py-1 bg-primary text-white text-xs font-bold rounded-full mb-4 uppercase tracking-widest">Summer Collection 2024</span>
+<h2 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+                        Redefining the Future of Living.
+                    </h2>
+<p class="text-slate-300 text-lg mb-8 max-w-md">
+                        Explore our handpicked collection of minimalist electronics and premium home essentials designed for the modern era.
+                    </p>
+<div class="flex gap-4">
+<button class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-bold transition-all transform hover:scale-105">
+                            Shop Collections
+                        </button>
+<button class="glass text-white px-8 py-3 rounded-lg font-bold hover:bg-white/20 transition-all">
+                            Learn More
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white">Featured Products</h3>
+<p class="text-slate-500 dark:text-slate-400">Innovation meets elegance in our top picks.</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-2 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Product Card 1 -->
+<div class="group glass rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all">
+<div class="aspect-square relative overflow-hidden bg-slate-200 dark:bg-slate-800">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Premium wireless headphones on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQmlxc1ro43OMStSXBix5DnNk8uvFobtZ8UbnUX4owzEaGLYFrXTWRXsaKquo9HMARmiLPSx0y0sVGw4uqBkmfxKzyWFjjUHvUTmeaV6Qh76AoLP-a7Y0Vs1ld6nppwOZ2CU0L4zO8p_QtkP1uQxRBkiem3rLfAYcJ2s4J3cfe-uWpnzgfxtYyM_qz9izGXPNNNv2gxTWVFCnt0xiePxsE3ko-SpltnDF88fNRGlzR5SZgOz1Mm3HM_mkrYQFAZx2CJg7gDA9Yoyq8"/>
+<div class="absolute top-3 right-3">
+<button class="size-8 glass rounded-full flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-bold text-lg group-hover:text-primary transition-colors">Sonic Pro Wireless</h4>
+<span class="text-primary font-bold">$249.00</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4">Noise-cancelling flagship audio.</p>
+<button class="w-full bg-primary text-white py-2.5 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm">shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group glass rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all">
+<div class="aspect-square relative overflow-hidden bg-slate-200 dark:bg-slate-800">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Minimalist white smart watch product shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtlbUhRr8UgtthcMt5ZUcWMsQyM-S9UGliQb8DYy6WhySZPEPDfGuronKm3SlDLncAVNtzuQjehuimKLMc9EMWSpnV2hJ5yIJKgjgroYe6hmPoSbgXc5xJ7Qfe_3v4Pb8R9x8eRFJhsBYu8QVhRBitWbN3qV_1IRLFQDDG_ebgU3hoDtH2HKLwb2GTr4_j_5krTuAhb-XbVnrXu4AX2r9Ik1X1DM5RCgHNHJdNGD9_zCW1gy5gb8LDA00AiV-FZxFPHTWn78bxdcCK"/>
+<div class="absolute top-3 right-3">
+<button class="size-8 glass rounded-full flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+<div class="absolute top-3 left-3">
+<span class="bg-red-500 text-white text-[10px] font-bold px-2 py-1 rounded uppercase">New</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-bold text-lg group-hover:text-primary transition-colors">Aura Watch S2</h4>
+<span class="text-primary font-bold">$399.00</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4">Health tracking redefined.</p>
+<button class="w-full bg-primary text-white py-2.5 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm">shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group glass rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all">
+<div class="aspect-square relative overflow-hidden bg-slate-200 dark:bg-slate-800">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Designer polarized sunglasses on white surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCey5-Ps2UKJNj89_sQdbuPoiWCdlh6KhnvARq3XqgI6bYPbB3G1QdsMK1fucyrXIKMbrzDk_7DgJifN5DwgUA559nC6k40Usd-DOsfbwbQ6S5TwqIVj1ll-inMRveI59Gw0FK6ucBlqwnaJC5dJHwkPmm921t5GfdYmWg05H8uzr-9u2KFGM0qUbJL3K-ZiEMlWbxgkzDNEQWZaQUKydwiGOP3eUmlXcFIsrewBhTiWKOwQ-6UoZ0mR9cZKXsykfkOILTLuSxOZJDc"/>
+<div class="absolute top-3 right-3">
+<button class="size-8 glass rounded-full flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-bold text-lg group-hover:text-primary transition-colors">Vision X Glasses</h4>
+<span class="text-primary font-bold">$125.00</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4">Polarized urban optics.</p>
+<button class="w-full bg-primary text-white py-2.5 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm">shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group glass rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all">
+<div class="aspect-square relative overflow-hidden bg-slate-200 dark:bg-slate-800">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Luxury leather wrist watch close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDefps9AjkA4L4ExLYWxeIMwn8a6GScT9qxYJ7gd234OeiYR0w5WrtYfABo-kOx-fVDemtmvvfYJQZrCIo8IMoVz__zHHv4xXjTYFRbsZIDJpWyHRAFBeRWpBU_8lBrUxHKLWsxuvOTHhUorFFHLkVYePjZmI0FlRKGsXlgSE8GiM73d9u_vVYDoQaTcGSc9suhfSIlKhy_vTKZByVz9tj9qCy48m014Po1jOlBOD0csPckZaT93erduQLVg_iFRM9qgRJNSfzsBjzM"/>
+<div class="absolute top-3 right-3">
+<button class="size-8 glass rounded-full flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-bold text-lg group-hover:text-primary transition-colors">Chronos Elite</h4>
+<span class="text-primary font-bold">$189.00</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4">Precision mechanical design.</p>
+<button class="w-full bg-primary text-white py-2.5 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm">shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Dynamic Grid Section -->
+<section class="py-12 border-t border-slate-200 dark:border-slate-800">
+<h3 class="text-2xl font-bold mb-8">Curated Collections</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="relative group h-64 rounded-xl overflow-hidden glass" data-alt="Abstract blue tech background">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Smart home hardware on wood table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy2IPmZcyDVVUHItEFpF8Xk3RvcWEd0Uc0LTHeBNw1QlA8RXElxHNZ3kdWxGihoRR57lSjRRaNlddAMWqQXVx8osHTs_sRIGyCLUzdD5q9m9nrwrrdz8MAKBNBJJTMNqIPJ0IpHkJWqBeIFgoSn0FJBZTGjds4cKTnj5Ie1XTD1HpU4sQGxw9uniabrv41uwu2EhrwDCiOZMSOy61xgzMASMmrX9p7yetBxsnUUwFlL2VLJJFCPc_8kE7AkqKGc2sLVBjvT2S0Azms"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
+<h4 class="text-white text-xl font-bold">Smart Home</h4>
+<p class="text-slate-300 text-sm">Automation for your lifestyle</p>
+</div>
+</div>
+<div class="relative group h-64 rounded-xl overflow-hidden glass" data-alt="Workspace with laptop and coffee">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Macbook and minimalist workspace setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsWrIozv2Ze0gfrVMQjuaHWvwnGTpNozfiwqVvDiQm5zKpH9u95I5GBC2Trs0AFBP5UsyZJuUfzfjPtzlC8j_7c1IXXCcXpFJDPMslXzuWXADMV7jnwoGN7Zt9aMjUWUAZQQl0TROENyKc_l7zpq9vbBk0wRBwtgWQlSwWIP2v6f5Ljp_AIsC8E4kjq8LcFNODFnq2OV2DYOL14asv0s0DqFj1UWQ4QbnwGljpuWpjTzSfdVrfndUscrEosgZeToUITufmdIfRuM_j"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
+<h4 class="text-white text-xl font-bold">Office Tech</h4>
+<p class="text-slate-300 text-sm">Elevate your productivity</p>
+</div>
+</div>
+<div class="relative group h-64 rounded-xl overflow-hidden glass" data-alt="Gaming setup with RGB lighting">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="High end gaming PC components and lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbwSHuxJ_sCiziSPBLH-5cS1vHJF8DiDpFyBxz9Q6XIOBXhWA1Q-tHoe-K86hRrU7YckYrabMzE5xpb_f7O3xLOnemCcaIOKXg8jQWQje5iQDo6mmQhIqP14Hbtcvfk2G1qC3bgGVR6P3ENhO5oWNnr00znSJ8oqjeiDQTyHLWeR6Fjz8BNXb4Df3YWCtTOr7nd2uI5qfMQUDhb-RNsIgaoq3JUz2ULUoGFXnAvXI7EibgqEaZFFgxMj--xFpNTCuO_cALWOhsemR3"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
+<h4 class="text-white text-xl font-bold">Gaming Hub</h4>
+<p class="text-slate-300 text-sm">Experience pure immersion</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Cart Preview -->
+<div class="fixed bottom-6 right-6 z-50">
+<button class="bg-primary text-white flex items-center gap-3 px-6 py-4 rounded-full shadow-2xl shadow-primary/40 hover:scale-105 transition-transform group">
+<div class="relative">
+<span class="material-symbols-outlined text-2xl">shopping_cart</span>
+<span class="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold h-5 w-5 flex items-center justify-center rounded-full border-2 border-primary">3</span>
+</div>
+<div class="flex flex-col items-start leading-none pr-2">
+<span class="text-[10px] font-medium opacity-80 uppercase tracking-widest">Your Cart</span>
+<span class="text-sm font-bold">$773.00</span>
+</div>
+<span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<!-- Minimal Footer -->
+<footer class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200 dark:border-slate-800">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-2">
+<div class="flex items-center gap-2 mb-6">
+<div class="size-6 bg-primary rounded-md flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xs">bolt</span>
+</div>
+<span class="font-bold text-lg">Innovative Shop</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 max-w-sm mb-6">
+                    Join our community of forward-thinking shoppers. Get exclusive access to limited drops and the latest in tech innovation.
+                </p>
+<div class="flex gap-4">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">language</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+<div>
+<h5 class="font-bold mb-4">Quick Links</h5>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary" href="#">New Arrivals</a></li>
+<li><a class="hover:text-primary" href="#">Featured Shops</a></li>
+<li><a class="hover:text-primary" href="#">Sell with Us</a></li>
+<li><a class="hover:text-primary" href="#">Gift Cards</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-4">Support</h5>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary" href="#">Help Center</a></li>
+<li><a class="hover:text-primary" href="#">Order Tracking</a></li>
+<li><a class="hover:text-primary" href="#">Return Policy</a></li>
+<li><a class="hover:text-primary" href="#">Contact Us</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+<p>© 2024 Innovative Shop. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+<a class="hover:text-primary" href="#">Cookie Settings</a>
+</div>
+</div>
+</footer>
+</body></html>

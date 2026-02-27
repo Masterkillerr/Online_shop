@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Carrito | Aura Market</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="js/remote-logger.js"></script>
+</head>
+
+<body style="padding-bottom: 5rem;">
+    <!-- Decorative background blobs -->
+    <div class="bg-blobs">
+        <div class="blob blob-1" style="background: #3b82f6;"></div>
+        <div class="blob blob-2" style="background: #8b5cf6;"></div>
+    </div>
+
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <span class="material-symbols-outlined">bolt</span>
+                </div>
+                <span>Aura Market</span>
+            </a>
+            <nav id="main-nav">
+                <a href="index.html">Inicio</a>
+                <a href="carrito.html" class="active">Carrito</a>
+                <a href="auth.html" id="nav-login">Iniciar Sesión</a>
+                <a href="auth.html?mode=signup" id="nav-signup" class="btn-primary"
+                    style="width: auto; padding: 0.5rem 1rem; margin-left: 1rem; display: inline-flex;">Registrarse</a>
+                <a href="#" id="nav-profile" style="display: none;">
+                    <span class="material-symbols-outlined"
+                        style="vertical-align: middle; font-size: 1.2rem;">person</span>
+                    <span id="user-name-display">Perfil</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="section-header" style="text-align: left;">
+            <h1 class="section-title">Tu Selección</h1>
+            <p class="section-subtitle">Revisa tus artículos antes de completar la orden.</p>
+        </div>
+
+        <div class="cart-layout">
+            <!-- Lista de productos -->
+            <div id="cart-items-container">
+                <p>Actualizando carrito...</p>
+            </div>
+
+            <!-- Resumen y Formulario -->
+            <div class="cart-summary-section">
+                <div class="summary-card">
+                    <h2 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 2rem; letter-spacing: -0.5px;">
+                        Resumen</h2>
+
+                    <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="display: flex; justify-content: space-between; color: var(--text-muted);">
+                            <span>Subtotal</span>
+                            <span id="cart-subtotal" style="color: white; font-weight: 600;">$0.00</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--text-muted);">
+                            <span>Envío Estándar</span>
+                            <span
+                                style="color: #10b981; font-weight: 800; text-transform: uppercase; font-size: 0.8rem;">Gratis</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-total">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 1rem; color: var(--text-muted); font-weight: 500;">Total</span>
+                            <span id="cart-total" style="color: var(--accent);">$0.00</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 4rem;">
+                        <h3
+                            style="font-size: 1.25rem; font-weight: 800; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <span class="material-symbols-outlined" style="color: var(--accent);">person</span>
+                            Datos de Envío
+                        </h3>
+                        <form id="checkout-form" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div class="grid-form" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                                <div class="form-group">
+                                    <label
+                                        style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);">Nombres</label>
+                                    <input type="text" id="nombres" class="form-input" placeholder="Ej. Juan" required>
+                                </div>
+                                <div class="form-group">
+                                    <label
+                                        style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);">Apellidos</label>
+                                    <input type="text" id="apellidos" class="form-input" placeholder="Ej. Pérez"
+                                        required>
+                                </div>
+                            </div>
+
+                            <div class="grid-form" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                                <div class="form-group">
+                                    <label
+                                        style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);">Documento
+                                        / ID</label>
+                                    <input type="text" id="documento" class="form-input"
+                                        placeholder="DPI / NIT / Cédula" required>
+                                </div>
+                                <div class="form-group">
+                                    <label
+                                        style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);">Correo
+                                        Electrónico</label>
+                                    <input type="email" id="email" class="form-input" placeholder="juan.perez@email.com"
+                                        required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label
+                                    style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);">Teléfono
+                                    de Contacto</label>
+                                <input type="tel" id="telefono" class="form-input" placeholder="+502 0000 0000"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label
+                                    style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);">Dirección
+                                    Completa</label>
+                                <input type="text" id="direccion" class="form-input"
+                                    placeholder="Avenida Siempre Viva 123, Ciudad" required>
+                            </div>
+
+                            <button type="submit" class="btn-primary" style="margin-top: 1.5rem; padding: 1.25rem;">
+                                Completar Pedido
+                                <span class="material-symbols-outlined">verified</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div
+                        style="margin-top: 2rem; padding: 1rem; border-radius: 12px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.1); font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: flex-start; gap: 0.75rem;">
+                        <span class="material-symbols-outlined"
+                            style="color: #10b981; font-size: 1.25rem;">security</span>
+                        <div>
+                            <p style="color: white; font-weight: 600; margin-bottom: 2px;">Compra Protegida</p>
+                            <p>Tus datos están seguros con nuestra pasarela de pago SSL de última generación.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="js/carrito.js"></script>
+</body>
+
+</html>

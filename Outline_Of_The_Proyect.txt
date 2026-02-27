@@ -1,0 +1,179 @@
+﻿📌 Descripción General
+En esta actividad, los estudiantes deberán desarrollar una Tienda en Línea funcional, aplicando conocimientos de diseño de interfaces, desarrollo frontend y conexión a base de datos mediante API.
+El proyecto se desarrollará en tres fases:
+1. Diseño de la interfaz con Stitch
+
+2. Maquetación e implementación en Antigravity
+
+3. Conexión a base de datos en Supabase usando Data API
+
+⚠️ Restricción importante:
+Solo podrán utilizar:
+   * HTML
+
+   * CSS
+
+   * JavaScript (vanilla JS, no frameworks)
+
+No se permite el uso de frameworks como React, Vue, Angular, Bootstrap, etc.
+El docente entregará:
+      * Script DDL (estructura de base de datos)
+
+      * Script DML (datos de prueba)
+
+________________
+
+
+🎯 Objetivo de Aprendizaje
+Desarrollar una aplicación web conectada a base de datos mediante API REST, aplicando buenas prácticas de:
+         * Diseño UI/UX
+
+         * Maquetación web
+
+         * Consumo de APIs
+
+         * Manejo de datos dinámicos
+
+         * Organización de código
+
+________________
+
+
+🧩 Funcionalidades Mínimas Requeridas
+La tienda debe permitir:
+1️⃣ Página principal
+            * Mostrar productos dinámicamente desde Supabase
+
+            * Mostrar:
+
+               * Nombre
+
+               * Precio
+
+               * Imagen
+
+               * Botón “Agregar al carrito”
+
+________________
+
+
+2️⃣ Carrito de compras
+                  * Agregar productos
+
+                  * Eliminar productos
+
+                  * Actualizar cantidades
+
+                  * Calcular subtotal y total dinámicamente con JavaScript
+
+________________
+
+
+3️⃣ Registro de cliente
+Formulario con:
+                     * Nombres
+
+                     * Apellidos
+
+                     * Email
+
+                     * Teléfono
+
+                     * Dirección
+
+Debe guardarse en la base de datos usando Data API.
+________________
+
+
+4️⃣ Proceso de venta
+Al confirmar la compra:
+                        * Insertar registro en tabla venta
+
+                        * Insertar registros en detalle_venta
+
+                        * Mostrar mensaje de confirmación
+
+________________
+
+
+🛠 Tecnologías Obligatorias
+                           * 🎨 Stitch → Diseño inicial (mockups)
+
+                           * 🚀 Antigravity → Implementación visual
+
+                           * 🌐 HTML5
+
+                           * 🎨 CSS3
+
+                           * ⚙️ JavaScript (Fetch API)
+
+                           * 🗄 Supabase (Data API)
+
+________________
+
+
+🔌 Conexión a Base de Datos
+La conexión deberá realizarse utilizando:
+                              * Supabase Data API
+
+                              * Método fetch() en JavaScript
+
+                              * Uso de:
+
+                                 * GET (consultar productos)
+
+                                 * POST (insertar cliente)
+
+                                 * POST (insertar venta)
+
+                                 * POST (insertar detalle de venta)
+
+No se permite conexión directa con base de datos.
+________________
+
+
+📁 Estructura Mínima del Proyecto
+/tienda-online
+│
+├── index.html
+├── carrito.html
+├── css/
+│   └── styles.css
+├── js/
+│   ├── app.js
+│   ├── api.js
+│   └── carrito.js
+└── assets/
+   └── imágenes
+________________
+
+
+📦 Entregables
+El estudiante deberá entregar:
+                                    1. 📁 Carpeta comprimida del proyecto
+
+                                    2. 🎨 Diseño en Stitch (archivo o enlace)
+
+                                    3. 🚀 Proyecto en Antigravity (enlace)
+
+                                    4. 📄 Documento PDF que incluya:
+
+                                       * Explicación de la arquitectura
+
+                                       * Capturas de pantalla
+
+                                       * Evidencia de conexión a Supabase
+
+                                       * Explicación del flujo de compra
+
+
+💡 Recomendaciones
+                                          * Usar async/await
+
+                                          * Separar lógica de API en archivo independiente
+
+                                          * Manejar errores con try/catch
+
+                                          * Validar formularios antes de enviar datos
+
+                                          * Usar almacenamiento local (localStorage) para el carrito

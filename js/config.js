@@ -1,0 +1,4 @@
+const SUPABASE_URL = "https://ppfqzfyrdbcycitnrfig.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBwZnF6ZnlyZGJjeWNpdG5yZmlnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIyMTk4NzIsImV4cCI6MjA4Nzc5NTg3Mn0.cNHpj7vWucetalNv35Y5LA_xGIXQItXj2EkJg60XQaU";
+
+export { SUPABASE_URL, SUPABASE_ANON_KEY };

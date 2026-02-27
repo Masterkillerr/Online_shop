@@ -1,0 +1,13 @@
+# Logs
+Logs/
+*.log
+
+# Node
+node_modules/
+
+# Local server
+.DS_Store
+Thumbs.db
+
+# Config
+js/config.js.bak

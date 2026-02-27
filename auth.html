@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso | Aura Market</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="js/remote-logger.js"></script>
+</head>
+
+<body class="flex-center"
+    style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+    <!-- Decorative background blobs -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="container" style="max-width: 500px; width: 100%;">
+        <div class="summary-card" style="position: relative; top: 0; padding: 3rem;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <a href="index.html" class="logo" style="justify-content: center; margin-bottom: 1.5rem;">
+                    <div class="logo-icon">
+                        <span class="material-symbols-outlined">bolt</span>
+                    </div>
+                    <span>Aura Market</span>
+                </a>
+                <h1 id="auth-title" style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem;">Bienvenido</h1>
+                <p id="auth-subtitle" style="color: var(--text-muted);">Ingresa tus credenciales para continuar.</p>
+            </div>
+
+            <form id="auth-form" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div id="name-group" style="display: none;">
+                    <div class="grid-form"
+                        style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <div class="form-group">
+                            <label
+                                style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);">Nombres</label>
+                            <input type="text" id="nombres" class="form-input" placeholder="Ej. Juan">
+                        </div>
+                        <div class="form-group">
+                            <label
+                                style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);">Apellidos</label>
+                            <input type="text" id="apellidos" class="form-input" placeholder="Ej. Pérez">
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label
+                            style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);">Documento
+                            / ID</label>
+                        <input type="text" id="documento" class="form-input" placeholder="DPI / NIT / Cédula">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label
+                        style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);">Correo
+                        Electrónico</label>
+                    <input type="email" id="email" class="form-input" placeholder="correo@ejemplo.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label
+                        style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);">Teléfono
+                        de Contacto</label>
+                    <input type="tel" id="password" class="form-input" placeholder="+502 0000 0000" required>
+                </div>
+
+                <button type="submit" id="auth-submit-btn" class="btn-primary"
+                    style="margin-top: 1rem; padding: 1.25rem;">
+                    Iniciar Sesión
+                </button>
+            </form>
+
+            <div style="margin-top: 2rem; text-align: center; font-size: 0.9rem;">
+                <span id="toggle-text" style="color: var(--text-muted);">¿No tienes una cuenta?</span>
+                <button id="toggle-auth"
+                    style="background: none; border: none; color: var(--accent); font-weight: 700; cursor: pointer; margin-left: 0.5rem; text-decoration: underline;">
+                    Regístrate
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="js/auth.js"></script>
+</body>
+
+</html>
