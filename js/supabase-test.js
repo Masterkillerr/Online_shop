@@ -9,7 +9,7 @@ async function testConnection() {
     try {
         const { data, error } = await supabase
             .from('producto') // replace with an existing table if needed
-            .select('id')
+            .select('id_producto')
             .limit(1);
         if (error) {
             console.error('❌ Supabase connection error:', error.message);
