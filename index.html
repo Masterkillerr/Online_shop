@@ -54,16 +54,20 @@
                 <div style="display: flex; gap: 1.5rem;">
                     <a href="#productos-section" class="btn-primary"
                         style="width: auto; padding: 1.25rem 3rem; text-decoration: none;">Comprar Ahora</a>
-                    <a href="#" class="btn-primary"
-                        style="width: auto; padding: 1.25rem 3rem; text-decoration: none; background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); backdrop-filter: blur(10px);">Saber
-                        Más</a>
                 </div>
             </div>
         </section>
 
         <section id="productos-section" class="section-header">
-            <h3 class="section-title">Productos Destacados</h3>
-            <p class="section-subtitle">Lo mejor en calidad y diseño para tu día a día.</p>
+            <h3 class="section-title">Nuestra Colección</h3>
+            <p class="section-subtitle">Explora productos premium seleccionados para ti.</p>
+
+            <!-- Category Filter Section -->
+            <div id="category-filter" class="category-grid"
+                style="margin-top: 3rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <button class="category-pill active" data-category="all">Todos</button>
+                <!-- Categorías se cargarán dinámicamente -->
+            </div>
         </section>
 
         <div id="product-grid" class="product-grid">

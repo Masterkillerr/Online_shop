@@ -142,6 +142,15 @@ function updateTotals() {
 checkoutForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    // Verificación de Autenticación
+    const user = localStorage.getItem('aura_user');
+    if (!user) {
+        if (confirm('Debes iniciar sesión para realizar una compra. ¿Deseas ir al login?')) {
+            window.location.href = 'auth.html';
+        }
+        return;
+    }
+
     if (cart.length === 0) {
         alert('Tu carrito está vacío.');
         return;

@@ -10,10 +10,52 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Inicialización
 document.addEventListener('DOMContentLoaded', () => {
+    fetchCategories();
     fetchProducts();
     updateCartUI();
     checkAuth();
 });
+
+// Variables de Estado
+let allProducts = [];
+let selectedCategory = 'all';
+
+// Obtener categorías de Supabase
+async function fetchCategories() {
+    try {
+        const { data, error } = await supabase
+            .from('tipo_producto')
+            .select('*')
+            .eq('estado', true);
+
+        if (error) throw error;
+        renderCategories(data);
+    } catch (error) {
+        console.error('Error al cargar categorías:', error.message);
+    }
+}
+
+function renderCategories(categories) {
+    const filterContainer = document.getElementById('category-filter');
+    if (!filterContainer) return;
+
+    const categoriesHTML = categories.map(cat => `
+        <button class="category-pill" data-category="${cat.id_tipo_producto}">${cat.nombre}</button>
+    `).join('');
+
+    filterContainer.innerHTML += categoriesHTML;
+
+    // Event Listeners para los botones de categorías
+    const pills = filterContainer.querySelectorAll('.category-pill');
+    pills.forEach(pill => {
+        pill.onclick = () => {
+            pills.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+            selectedCategory = pill.getAttribute('data-category');
+            filterAndRenderProducts();
+        };
+    });
+}
 
 // Verificar Autenticación (Local)
 async function checkAuth() {
@@ -52,15 +94,24 @@ async function fetchProducts() {
         const { data, error } = await supabase
             .from('producto')
             .select('*')
-            .eq('estado', true); // Solo productos activos
+            .eq('estado', true);
 
         if (error) throw error;
 
-        renderProducts(data);
+        allProducts = data;
+        filterAndRenderProducts();
     } catch (error) {
         console.error('Error al cargar productos:', error.message);
-        productGrid.innerHTML = `<p>Error al cargar productos. Por favor, asegúrate de que la tabla "producto" existe en Supabase y tiene datos.</p>`;
+        productGrid.innerHTML = `<p>Error al cargar productos.</p>`;
     }
+}
+
+function filterAndRenderProducts() {
+    const filtered = selectedCategory === 'all'
+        ? allProducts
+        : allProducts.filter(p => p.id_tipo_producto.toString() === selectedCategory);
+
+    renderProducts(filtered);
 }
 
 // Renderizar productos en el grid
@@ -73,7 +124,13 @@ function renderProducts(productos) {
     productGrid.innerHTML = productos.map(producto => `
         <div class="product-card" style="opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out;">
             <div class="product-image-container">
-                <img src="${producto.imagen_url || 'https://via.placeholder.com/400'}" alt="${producto.nombre}" class="product-image">
+                ${producto.imagen_url && producto.imagen_url !== 'null' ?
+            `<img src="${producto.imagen_url}" alt="${producto.nombre}" class="product-image">` :
+            `<div class="image-placeholder">
+                        <span class="material-symbols-outlined">image</span>
+                        <p style="font-size: 0.8rem; font-weight: 600;">Aura Market</p>
+                    </div>`
+        }
             </div>
             <div class="product-info">
                 <div class="product-header">
@@ -105,6 +162,15 @@ function renderProducts(productos) {
 
 // Funciones del Carrito (Expuestas globalmente para el onclick)
 window.addToCart = async (id, nombre, precio, imagen) => {
+    // Verificación de Autenticación
+    const user = localStorage.getItem('aura_user');
+    if (!user) {
+        if (confirm('Debes iniciar sesión para agregar productos al carrito. ¿Deseas ir al login?')) {
+            window.location.href = 'auth.html';
+        }
+        return;
+    }
+
     try {
         // Verificar stock real en DB
         const { data: producto, error } = await supabase
