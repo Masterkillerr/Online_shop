@@ -49,6 +49,7 @@ async function checkAuth() {
             navProfile.onclick = async (e) => {
                 e.preventDefault();
                 localStorage.removeItem('aura_user');
+                localStorage.removeItem('cart'); // Reset cart on logout
                 navProfile.innerHTML = '<span class="material-symbols-outlined" style="animation: spin 1s linear infinite;">sync</span> Saler...';
                 setTimeout(() => window.location.reload(), 300);
             };

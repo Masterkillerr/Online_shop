@@ -77,6 +77,7 @@ async function checkAuth() {
                 e.preventDefault();
                 // Eliminar confirm nativo que se siente laggy
                 localStorage.removeItem('aura_user');
+                localStorage.removeItem('cart'); // Reset cart on logout
                 // Feedback visual inmediato antes del reload
                 navProfile.innerHTML = '<span class="material-symbols-outlined" style="animation: spin 1s linear infinite;">sync</span> Saler...';
                 setTimeout(() => window.location.reload(), 300);
