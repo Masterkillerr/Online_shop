@@ -14,10 +14,11 @@
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
 
-    /* Glassmorphism Tokens */
-    --glass-bg: rgba(21, 28, 44, 0.6);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --glass-blur: blur(14px);
+    /* Glassmorphism Tokens - Premium Refinement */
+    --glass-bg: rgba(15, 23, 42, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-blur: blur(20px);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
 
     /* Utility */
     --radius-lg: 1rem;
@@ -79,6 +80,16 @@ body {
     animation-delay: -5s;
 }
 
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 @keyframes move {
     0% {
         transform: translate(0, 0) scale(1);
@@ -108,6 +119,7 @@ header {
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 .nav-container {
@@ -254,13 +266,14 @@ nav a.active::after {
 }
 
 .product-card {
-    background: var(--glass-bg);
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.4), rgba(15, 23, 42, 0.4));
     backdrop-filter: var(--glass-blur);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-xl);
     overflow: hidden;
     transition: var(--transition-smooth);
     position: relative;
+    box-shadow: var(--glass-shadow);
 }
 
 .product-card::before {
@@ -399,8 +412,9 @@ nav a.active::after {
 }
 
 .btn-primary:hover {
-    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.5);
-    transform: translateY(-2px);
+    box-shadow: 0 0 30px var(--accent-glow);
+    transform: translateY(-3px) scale(1.02);
+    filter: brightness(1.1);
 }
 
 /* Floating Elements */
@@ -424,7 +438,8 @@ nav a.active::after {
 }
 
 .floating-cart:hover {
-    transform: scale(1.08) rotate(-1deg);
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 30px 60px -12px rgba(59, 130, 246, 0.7);
 }
 
 .cart-icon-wrapper {
@@ -489,6 +504,7 @@ nav a.active::after {
     border-radius: var(--radius-xl);
     position: sticky;
     top: 120px;
+    box-shadow: var(--glass-shadow);
 }
 
 .summary-total {
@@ -530,8 +546,13 @@ nav a.active::after {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+
     .hero {
-        height: 450px;
+        height: 500px;
+        margin-top: 1.5rem;
     }
 
     .hero-content {
@@ -539,6 +560,46 @@ nav a.active::after {
     }
 
     .hero h2 {
-        font-size: 2.8rem;
+        font-size: 3rem;
     }
+
+    .nav-container {
+        padding: 0 1.5rem;
+    }
+
+    nav a {
+        display: none;
+        /* Mobile menu refinement needed later */
+    }
+
+    #nav-login,
+    #nav-signup,
+    #nav-profile {
+        display: inline-flex !important;
+        margin-left: 0.5rem;
+    }
+
+    .floating-cart {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        padding: 1rem 1.5rem;
+    }
+}
+
+/* Scrollbar refinement */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-bg);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
 }

@@ -75,10 +75,11 @@ async function checkAuth() {
             userNameDisplay.textContent = user.nombres || 'Mi Perfil';
             navProfile.onclick = async (e) => {
                 e.preventDefault();
-                if (confirm('¿Estás seguro de que deseas cerrar sesión?')) {
-                    localStorage.removeItem('aura_user');
-                    window.location.reload();
-                }
+                // Eliminar confirm nativo que se siente laggy
+                localStorage.removeItem('aura_user');
+                // Feedback visual inmediato antes del reload
+                navProfile.innerHTML = '<span class="material-symbols-outlined" style="animation: spin 1s linear infinite;">sync</span> Saler...';
+                setTimeout(() => window.location.reload(), 300);
             };
         }
     } else {
