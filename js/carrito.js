@@ -71,7 +71,7 @@ function renderCart() {
 
     cartItemsContainer.innerHTML = cart.map(item => `
         <div class="cart-item" style="opacity: 0; transform: translateX(-20px); transition: all 0.5s ease-out;">
-            <img src="${item.imagen || 'https://via.placeholder.com/100'}" alt="${item.nombre}" class="cart-item-img">
+            <img src="${(item.imagen && item.imagen !== 'null') ? item.imagen : 'https://via.placeholder.com/100'}" alt="${item.nombre}" class="cart-item-img">
             <div class="cart-item-info">
                 <div class="cart-item-header">
                     <h3 style="font-size: 1.25rem; font-weight: 700; color: white;">${item.nombre}</h3>

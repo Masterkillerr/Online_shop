@@ -83,7 +83,7 @@ function renderProducts(productos) {
                 <p class="product-desc">${producto.descripcion || 'Calidad superior y diseño excepcional en cada detalle.'}</p>
                 <button class="btn-primary" 
                     ${producto.stock <= 0 ? 'disabled style="background: #475569; cursor: not-allowed;"' : ''} 
-                    onclick="addToCart(${producto.id_producto}, '${producto.nombre}', ${producto.precio}, '${producto.imagen_url}')">
+                    onclick="addToCart(${producto.id_producto}, '${producto.nombre}', ${producto.precio}, '${producto.imagen_url || ''}')">
                     <span class="material-symbols-outlined" style="font-size: 1.25rem;">
                         ${producto.stock <= 0 ? 'block' : 'shopping_bag'}
                     </span>

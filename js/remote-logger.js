@@ -6,10 +6,15 @@
     let isActive = true;
     const LOGGER_URL = 'http://localhost:3000/log';
 
+    // Solo activar si estamos en localhost
+    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+        isActive = false;
+        return;
+    }
+
     // Verificar si el servidor está disponible al inicio
     fetch(LOGGER_URL, { method: 'OPTIONS' }).catch(() => {
         isActive = false;
-        // No logueamos nada para no ensuciar la consola si no hay servidor
     });
 
     function sendLog(type, args) {
